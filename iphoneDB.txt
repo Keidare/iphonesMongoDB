@@ -1,0 +1,598 @@
+mongosh --host <ip>
+
+
+//create db
+use iphoneDB
+
+
+//create iphone collection
+db.createCollection("iPhones")
+
+//add all iphone data
+
+db.iPhones.insertMany([
+    {
+        model: "iPhone (1st Gen)",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2007,
+        headsetJack: true,
+        price: [499,599],
+        colors: ["Aluminum"],
+        slogan: "Apple reinvents the phone.",
+        storage: [4,8,16]
+    },
+    {
+        model: "iPhone 3G",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2008,
+        headsetJack: true,
+        price: [199,299],
+        colors: ["Black", "White"],
+        slogan: "The iPhone you have been waiting for.",
+        storage: [8,16]
+    },
+    {
+        model: "iPhone 3Gs",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2009,
+        headsetJack: true,
+        price: [99,199,299],
+        colors: ["Black", "White"],
+        slogan: "The fastest, smartest phone yet.",
+        storage: [8,16,32]
+    },
+    {
+        model: "iPhone 4",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2010,
+        headsetJack: true,
+        price: [99,199,299],
+        colors: ["Black", "White"],
+        slogan: "This changes everything. Again.",
+        storage: [8,16,32]
+    },
+    {
+        model: "iPhone 4s",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2011,
+        headsetJack: true,
+        price: [199,299,399],
+        colors: ["Black", "White"],
+        slogan: "The most amazing iPhone yet",
+        storage: [16,32,64]
+    },
+    {
+        model: "iPhone 5",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2012,
+        headsetJack: true,
+        price: [199,299,399],
+        colors: ["Black", "White"],
+        slogan: "The biggest thing to happen to iPhone since iPhone.",
+        storage: [16,32,64]
+    },
+    {
+        model: "iPhone 5s",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2013,
+        headsetJack: true,
+        price: [199,299,399],
+        colors: ["Gold", "Silver", "Space Gray"],
+        slogan: "You're more powerful than you think.",
+        storage: [16,32,64]
+    },
+    {
+        model: "iPhone 5c",
+        homeButton: true,
+        touchID: false,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2013,
+        headsetJack: true,
+        price: [99,199],
+        colors: ["Blue", "Green", "Yellow", "Pink", "White"],
+        slogan: "For the colorful.",
+        storage: [8,16,32]
+    },
+    {
+        model: "iPhone 6",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2014,
+        headsetJack: true,
+        price: [199,299,399],
+        colors: ["Gold", "Silver", "Space Gray"],
+        slogan: "Bigger than bigger",
+        storage: [16,32,64,128]
+    },
+    {
+        model: "iPhone 6 Plus",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2014,
+        headsetJack: true,
+        price: [299,399, 499],
+        colors: ["Gold", "Silver", "Space Gray"],
+        slogan: "Bigger than bigger",
+        storage: [16,32,64,128]
+    },
+    {
+        model: "iPhone 6s",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2015,
+        headsetJack: true,
+        price: [199,299,399],
+        colors: ["Gold", "Silver", "Space Gray", "Rose Gold"],
+        slogan: "The only thing that’s changed is everything.",
+        storage: [16,64,128]
+    },
+    {
+        model: "iPhone 6s Plus",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2015,
+        headsetJack: true,
+        price: [299,399,499],
+        colors: ["Gold", "Silver", "Space Gray", "Rose Gold"],
+        slogan: "The only thing that’s changed is everything.",
+        storage: [16,64,128]
+    },
+    {
+        model: "iPhone SE (1st Gen)",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2016,
+        headsetJack: true,
+        price: [399,499],
+        colors: ["Gold", "Silver", "Space Gray", "Rose Gold"],
+        slogan: "A big step for small.",
+        storage: [16,64]
+    },
+    {
+        model: "iPhone 7",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2016,
+        headsetJack: false,
+        price: [649,749,849],
+        colors: ["Gold", "Silver", "Black", "Rose Gold", "Jet Black", "(Product) RED"],
+        slogan: "This is 7",
+        storage: [32,128,256]
+    },
+    {
+        model: "iPhone 7 Plus",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: false,
+        releaseDate: 2016,
+        headsetJack: false,
+        price: [749,849,949],
+        colors: ["Gold", "Silver", "Black", "Rose Gold", "Jet Black", "(Product) RED"],
+        slogan: "This is 7",
+        storage: [32,128,256]
+    },
+    {
+        model: "iPhone 8",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: true,
+        releaseDate: 2017,
+        headsetJack: false,
+        price: [699,749,849],
+        colors: ["Gold", "Silver", "Space Gray", "(Product) RED"],
+        slogan: "A new generation of iPhone",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 8 Plus",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: true,
+        releaseDate: 2017,
+        headsetJack: false,
+        price: [799,849,949],
+        colors: ["Gold", "Silver", "Space Gray", "(Product) RED"],
+        slogan: "A new generation of iPhone",
+        storage: [64,128,256]
+    },	
+    {
+        model: "iPhone X",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2017,
+        headsetJack: false,
+        price: [999,1099],
+        colors: ["Silver", "Space Gray"],
+        slogan: "Say hello to the future.",
+        storage: [64,256]
+    },
+    {
+        model: "iPhone XR",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2018,
+        headsetJack: false,
+        price: [749,849,949],
+        colors: ["Black", "White", "Blue", "Yellow", "Coral", "(Product) RED"],
+        slogan: "Brilliant. In every way.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone XS",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2018,
+        headsetJack: false,
+        price: [999,1099,1199],
+        colors: ["Silver", "Space Gray", "Gold"],
+        slogan: "Welcome to the big screens.",
+        storage: [64,256,512]
+    },
+    {
+        model: "iPhone XS Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2018,
+        headsetJack: false,
+        price: [1099,1199,1299],
+        colors: ["Silver", "Space Gray", "Gold"],
+        slogan: "Welcome to the big screens.",
+        storage: [64,256,512]
+    },
+    {
+        model: "iPhone 11",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2019,
+        headsetJack: false,
+        price: [699,799,899],
+        colors: ["Black", "White", "Purple", "Yellow", "Green", "(Product) RED"],
+        slogan: "Just the right amount of everything.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 11 Pro",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2019,
+        headsetJack: false,
+        price: [999,1099,1199],
+        colors: ["Silver", "Space Gray", "Gold", "Midnight Green"],
+        slogan: "iPhone has gone Pro.",
+        storage: [64,256,512]
+    },
+    {
+        model: "iPhone 11 Pro Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2019,
+        headsetJack: false,
+        price: [1099,1199,1299],
+        colors: ["Silver", "Space Gray", "Gold", "Midnight Green"],
+        slogan: "iPhone has gone Pro.",
+        storage: [64,256,512]
+    },
+    {
+        model: "iPhone SE (2nd Gen)",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: true,
+        releaseDate: 2020,
+        headsetJack: false,
+        price: [399,499,599],
+        colors: ["Black", "White", "(Product) RED"],
+        slogan: "Lots to love. Less to spend.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 12",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2020,
+        headsetJack: false,
+        price: [799,899,999],
+        colors: ["Black", "White", "Purple", "Blue", "Green", "(Product) RED"],
+        slogan: "Blast past fast.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 12 mini",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2020,
+        headsetJack: false,
+        price: [699,799,899],
+        colors: ["Black", "White", "Purple", "Blue", "Green", "(Product) RED"],
+        slogan: "Blast past fast.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 12 Pro",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2020,
+        headsetJack: false,
+        price: [999,1099,1199],
+        colors: ["Silver", "Graphite", "Gold", "Pacific Blue"],
+        slogan: "It's a leap year.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 12 Pro Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2020,
+        headsetJack: false,
+        price: [1099,1199,1299],
+        colors: ["Silver", "Graphite", "Gold", "Pacific Blue"],
+        slogan: "It's a leap year.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 13",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2021,
+        headsetJack: false,
+        price: [799,899,999],
+        colors: ["Midnight", "Starlight", "Pink", "Blue", "Green", "(Product) RED"],
+        slogan: "Your new superpower.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 13 mini",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2021,
+        headsetJack: false,
+        price: [699,799,899],
+	colors: ["Midnight", "Starlight", "Pink", "Blue", "Green", "(Product) RED"],
+        slogan: "Your new superpower.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 13 Pro",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2021,
+        headsetJack: false,
+        price: [999,1099,1199,1299],
+        colors: ["Silver", "Graphite", "Gold", "Sierra Blue", "Alpine Green"],
+        slogan: "Oh. So. Pro.",
+        storage: [128,256,512,1024]
+    },
+    {
+        model: "iPhone 13 Pro Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2021,
+        headsetJack: false,
+        price: [1099,1199,1299,1399],
+        colors: ["Silver", "Graphite", "Gold", "Sierra Blue", "Alpine Green"],
+        slogan: "Oh. So. Pro.",
+        storage: [128,256,512,1024]
+    },
+    {
+        model: "iPhone SE (2nd Gen)",
+        homeButton: true,
+        touchID: true,
+	faceID: false,
+        wirelessCharging: true,
+        releaseDate: 2022,
+        headsetJack: false,
+        price: [429,529,629],
+        colors: ["Midnight", "Starlight", "(Product) RED"],
+        slogan: "Love the power. Love the price.",
+        storage: [64,128,256]
+    },
+    {
+        model: "iPhone 14",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2022,
+        headsetJack: false,
+        price: [799,899,999],
+        colors: ["Blue", "Purple", "Midnight", "Starlight", "Yellow", "(Product) RED"],
+        slogan: "Big and bigger.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 14 PLus",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2022,
+        headsetJack: false,
+        price: [899,999,1099],
+        colors: ["Blue", "Purple", "Midnight", "Starlight", "Yellow", "(Product) RED"],
+        slogan: "Big and bigger.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 14 Pro",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2022,
+        headsetJack: false,
+        price: [999,1099,1299,1499],
+        colors: ["Silver", "Space Black", "Gold", "Deep Purple"],
+        slogan: "Pro. Beyond.",
+        storage: [128,256,512,1024]
+    },
+    {
+        model: "iPhone 14 Pro Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2022,
+        headsetJack: false,
+        price: [1099,1199,1399,1599],
+        colors: ["Silver", "Space Black", "Gold", "Deep Purple"],
+        slogan: "Pro. Beyond.",
+        storage: [128,256,512,1024]
+    },
+    {
+        model: "iPhone 15",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2023,
+        headsetJack: false,
+        price: [799,899,1099],
+        colors: ["Blue", "Pink", "Yellow", "Green", "Black"],
+        slogan: "Newphoria.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 15 Plus",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2023,
+        headsetJack: false,
+        price: [899,999,1199],
+        colors: ["Blue", "Pink", "Yellow", "Green", "Black"],
+        slogan: "Newphoria.",
+        storage: [128,256,512]
+    },
+    {
+        model: "iPhone 15 Pro",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2023,
+        headsetJack: false,
+        price: [999,1099,1299,1499],
+        colors: ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
+        slogan: "So strong. So light. So Pro.",
+        storage: [128,256,512,1024]
+    },
+    {
+        model: "iPhone 15 Pro Max",
+        homeButton: false,
+        touchID: false,
+	faceID: true,
+        wirelessCharging: true,
+        releaseDate: 2023,
+        headsetJack: false,
+        price: [1199,1399,1599],
+        colors: ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
+        slogan: "So strong. So light. So Pro.",
+        storage: [256,512,1024]
+    },
+])
+
+// show iphones without home button (start from X)
+db.iPhones.aggregate([
+    {
+        $match: {
+            homeButton: false
+        }
+    },
+    {
+        $group: {
+            _id: null,
+            iPhones: { $push: "$$ROOT" }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            iPhones: 1
+        }
+    }
+])
+
+// show latest iphone that is not a pro
+db.iPhones.aggregate([
+    {
+        $match: {
+            model: { $not: /Pro/ } // Match models that do not contain "Pro"
+        }
+    },
+    {
+        $sort: {
+            releaseDate: -1 // descending order
+        }
+    },
+    {
+        $limit: 1 // Limit the result to one doc
+    }
+])
