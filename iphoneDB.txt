@@ -596,3 +596,49 @@ db.iPhones.aggregate([
         $limit: 1 // Limit the result to one doc
     }
 ])
+
+
+//display all iPhones with wireless charging capability
+db.iPhones.aggregate([
+    {
+        $match: {
+            wirelessCharging: true
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            model: 1,
+            releaseDate: 1,
+            price: 1,
+            colors: 1
+        }
+    }
+])
+
+
+//sort all iPhones released from 2010-2015 in descending order
+db.iPhones.find({
+    releaseDate: {
+        $gte: 2010,
+        $lte: 2015
+    }
+}).sort({ releaseDate: -1 })
+
+
+//match all iPhones without the headset jack
+db.iPhones.aggregate([
+    {
+        $match: {
+            headsetJack: false
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            model: 1
+        }
+    }
+])
+
+
