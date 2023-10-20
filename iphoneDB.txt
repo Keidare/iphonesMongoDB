@@ -573,7 +573,7 @@ db.iPhone.insertMany([
 ])
 
 // show iphones without home button (start from X)
-db.iPhones.aggregate([
+db.iPhone.aggregate([
     {
         $match: {
             homeButton: false
@@ -594,7 +594,7 @@ db.iPhones.aggregate([
 ])
 
 // show latest iphone that is not a pro
-db.iPhones.aggregate([
+db.iPhone.aggregate([
     {
         $match: {
             model: { $not: /Pro/ } // Match models that do not contain "Pro"
@@ -612,7 +612,7 @@ db.iPhones.aggregate([
 
 
 //display all iPhones with wireless charging capability
-db.iPhones.aggregate([
+db.iPhone.aggregate([
     {
         $match: {
             wirelessCharging: true
@@ -631,7 +631,7 @@ db.iPhones.aggregate([
 
 
 //sort all iPhones released from 2010-2015 in descending order
-db.iPhones.find({
+db.iPhone.find({
     releaseDate: {
         $gte: 2010,
         $lte: 2015
@@ -640,7 +640,7 @@ db.iPhones.find({
 
 
 //match all iPhones without the headset jack
-db.iPhones.aggregate([
+db.iPhone.aggregate([
     {
         $match: {
             headsetJack: false
@@ -653,5 +653,18 @@ db.iPhones.aggregate([
         }
     }
 ])
+
+
+// 64 GB Base model: Base meaning it's the lowest storage option.
+
+db.iPhone.count({
+    "storage.0": 64
+})
+
+// iPhone in slogan 
+
+db.iPhone.createIndex({ slogan: "text" })
+db.iPhone.find({ $text: { $search: "iPhone" } })
+
 
 
