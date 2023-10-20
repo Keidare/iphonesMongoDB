@@ -6,57 +6,16 @@ use iphoneDB
 
 
 //create iphone collection
-db.createCollection("iPhones", {
+db.createCollection("iPhone", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["model","homeButton","touchID","faceID","wirelessCharging","releaseDate","headsetJack","price","colors","slogan","storage"],
+            required: ["model"],
             properties: {
                 model: {
                     bsonType: "string",
                     description: "Model name - Required."
-                },
-                homeButton: {
-                    bsonType: "bool",
-                    description: "If model has physical home button - Required."
                 }
-                touchID: {
-                    bsonType: "bool",
-                    description: "If model has Touch ID - Required."
-                }
-                faceID: {
-                    bsonType: "bool",
-                    description: "If model has Face ID - Required."
-                }
-                wirelessCharging: {
-                    bsonType: "bool",
-                    description: "If model has wireless charging - Required."
-                }
-                releaseDate: {
-                    bsonType: "int",
-                    description: "Year model was released - Required."
-                }
-                headsetJack: {
-                    bsonType: "bool",
-                    description: "If model has a 3.5mm jack for audio devices - Required."
-                }
-                price: {
-                    bsonType: ["int"],
-                    description: "Array of suggested retail prices in dollars (different based on storage) - Required."
-                }
-                colors: {
-                    bsonType: ["string"],
-                    description: "Array of available color options for the model - Required."
-                }
-                slogan: {
-                    bsonType: "string",
-                    description: "Slogan used for model - Required."
-                }
-                storage: {
-                    bsonType: ["int"],
-                    description: "Array of available storage options for the model in GB - Required."
-                }
-                
             }
         }
     }
@@ -64,7 +23,7 @@ db.createCollection("iPhones", {
 
 //add all iphone data
 
-db.iPhones.insertMany([
+db.iPhone.insertMany([
     {
         model: "iPhone (1st Gen)",
         homeButton: true,
@@ -495,7 +454,7 @@ db.iPhones.insertMany([
         storage: [128,256,512,1024]
     },
     {
-        model: "iPhone SE (2nd Gen)",
+        model: "iPhone SE (3rd Gen)",
         homeButton: true,
         touchID: true,
 	faceID: false,
